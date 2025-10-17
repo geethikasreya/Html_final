@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Top Places Near Me — Map Search</title>
+  <meta name="description" content="Search Google Maps for top places near you and see the first five results as cards." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/map.js"></script>
+  <!-- Replace YOUR_API_KEY with your actual key -->
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAomaUWURLtow2RVRBBw5fw4l5rZ80-af0&libraries=places&callback=initMap"></script>
+</head>
+<body>
+  
+  <header class="site-header">
+    <div class="container">
+      <h1>Top Places Map</h1>
+      
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <div class="search-bar">
+      <label class="sr-only" for="search-input">Search</label>
+      <input id="search-input" type="text" placeholder="top restaurants near me" />
+      <button id="search-btn" class="btn" type="button">Search</button>
+    </div>
+
+    <div id="map" class="map" role="application" aria-label="Map results"></div>
+    <div id="cards" class="cards" aria-live="polite"></div>
+  </main>
+
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

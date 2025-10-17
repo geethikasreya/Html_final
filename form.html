@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Account — Change Password &amp; Address</title>
+  <meta name="description" content="Update your account address and change password with strict client-side validation." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/form.js"></script>
+</head>
+<body>
+  
+  <header class="site-header">
+    <div class="container">
+      <h1>Account Settings</h1>
+      
+    </div>
+  </header>
+
+  <main id="main" class="container form-grid">
+    <section class="panel">
+      <h2>Shipping Address</h2>
+      <p class="muted" id="current-address">Geethika Sreya Bhuvanagiri</p>
+      <button id="change-address" class="btn" type="button">Change Address</button>
+    </section>
+
+    <form id="password-form" class="panel" novalidate>
+      <h2>Change Password</h2>
+
+      <label for="current-password">Current Password</label>
+      <div class="pw">
+        <input id="current-password" name="current" type="password" required aria-describedby="help" />
+        <button type="button" class="icon-eye" aria-label="Show/Hide current password"></button>
+      </div>
+
+      <label for="new-password">New Password</label>
+      <div class="pw">
+        <input id="new-password" name="new" type="password" required aria-describedby="rules" />
+        <button type="button" class="icon-eye" aria-label="Show/Hide new password"></button>
+      </div>
+
+      <label for="confirm-password">Confirm Password</label>
+      <div class="pw">
+        <input id="confirm-password" name="confirm" type="password" required />
+        <button type="button" class="icon-eye" aria-label="Show/Hide confirm password"></button>
+      </div>
+
+    
+      <p id="help" class="small">We never store your plain text password.</p>
+
+      <div id="errors" class="errors" role="alert" aria-live="polite"></div>
+      <button class="btn" type="submit">Change Password</button>
+      <p id="success" class="success" hidden>Password updated successfully ✔</p>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OCU Visitor Guide — Campus Visit &amp; Visitor Relations</title>
+  <meta name="description" content="Plan your OCU visit. Contact Visitor Relations, see staff details, and get directions. Optimized for accessibility and SEO." />
+  <!-- Replace with your real deployed URL, or remove this line until you publish -->
+  <link rel="canonical" href="https://your-domain.example/ocu-visitor-guide/" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- WCAG: skip to content -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <h1 class="site-title">Campus Visit &amp; Visitor Relations</h1>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section aria-labelledby="staff-title" class="card staff">
+      <div class="staff-photo">
+        <img src="assets/img/staff_grace.jpg"
+             alt="Portrait of Grace Helton, Campus Visit and Events Manager"
+             width="320" height="400" />
+      </div>
+      <div class="staff-body">
+        <h2 id="staff-title">Grace Helton</h2>
+        <p class="muted">Campus Visit and Events Manager</p>
+        <p>
+          <a href="mailto:ghelton@okcu.edu">ghelton@okcu.edu</a> ·
+          <a href="tel:+14052085055">(405) 208-5055</a>
+        </p>
+        <p>Territory: All informative events &amp; campus visits.</p>
+        <p>
+          <a class="btn" href="#" aria-label="Visit page for Grace Helton">Visit Page</a>
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="contact-title" class="panel contact">
+      <h2 id="contact-title">Contact OCU Visitor Relations!</h2>
+      <address>
+        <a href="mailto:visitocu@okcu.edu">visitocu@okcu.edu</a><br />
+        <a href="tel:+18006337242">800-633-7242, ext. 4</a><br />
+        <a href="tel:+14052085445">405-208-5445</a>
+      </address>
+      <p>
+        <a class="btn" href="https://maps.google.com" target="_blank" rel="noopener"
+           aria-label="Open Google Maps for directions to OCU Visitor Relations">
+          View our map and get directions!
+        </a>
+      </p>
+    </section>
+
+    <aside class="quote-card" aria-label="Student quote">
+      <figure>
+        <img class="quote-photo" src="assets/img/ocu_arch.jpg"
+             alt="Student seated under OCU archway inside campus building"
+             width="600" height="420" />
+        <blockquote>
+          <p>OCU taught me perseverance. Our professors teach us how to be adults with training wheels. They’re ready to help you.</p>
+        </blockquote>
+        <figcaption>
+          <strong>Katie Crim</strong><br>
+          <span>Flute Performance alumna</span>
+        </figcaption>
+      </figure>
+    </aside>
+
+    <section aria-labelledby="degree-finder" class="panel degree">
+      <div class="badge" aria-hidden="true">DEGREE FINDER</div>
+      <h2 id="degree-finder">Explore Programs</h2>
+      <p class="lede">Find your passion:</p>
+      <form class="search-form" role="search" aria-label="Degree finder">
+        <label class="sr-only" for="program-search">Search for a program</label>
+        <input id="program-search" type="search" name="q" placeholder="Search for a program" />
+        <button type="submit" class="btn go">GO!</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span id="year"></span> OCU Visitor Guide</p>
+    </div>
+  </footer>
+
+  <script>
+    // Keep this now that we added the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

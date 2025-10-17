@@ -1,0 +1,359 @@
+
+*{box-sizing:border-box}
+:root{
+  /* Global text */
+  --bg:#ffffff;
+  --text:#1e2a38;
+  --muted:#5b6b7f;
+
+  /* Home (staff) card */
+  --staff-panel:#efefef;      /* light gray behind staff */
+  --staff-divider:#4aa44a;    /* thin green line under staff */
+  --staff-corner:#1b6aa4;     /* tiny blue square */
+  --olive:#c8d874;            /* small olive buttons (Visit page & map) */
+  --border:#d9dee6;
+
+  /* Contact block */
+  --contact-blue:#1a5e86;     /* deep blue panel */
+
+  /* Form page */
+  --navy:#0b2358;             /* dark header bar + buttons */
+  --navy-hover:#0e2e7a;
+  --ring:#a8c1ff;
+  --line:#d8dee9;
+  --eye-bg:#eef2f6;
+}
+
+/* ===================== BASE / LAYOUT ===================== */
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial}
+img{max-width:100%;display:block}
+.container{width:min(1100px,92%);margin-inline:auto}
+a{color:inherit;text-underline-offset:2px}
+
+/* ===================== HEADER / NAV ===================== */
+.site-header{background:#f2f6fb;border-bottom:1px solid var(--border)}
+.site-header .site-title{margin:0;font-size:1.75rem;padding:.9rem 0}
+.site-nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:.5rem 0 1rem}
+.site-nav a{display:inline-block;padding:.45rem .85rem;border-radius:.55rem;text-decoration:none;color:#102b49}
+.site-nav a[aria-current="page"], .site-nav a:hover, .site-nav a:focus{background:#e2edf8}
+
+/* ===================== GENERIC CARD ===================== */
+.card{
+  display:grid;grid-template-columns:300px 1fr;gap:1.25rem;
+  padding:1.1rem;border:1px solid var(--border);border-radius:.9rem;background:#fff;
+  box-shadow:0 6px 22px rgba(0,0,0,.06);position:relative;overflow:hidden;
+}
+.staff-photo img{border-radius:.6rem}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+
+/* ===================== STAFF CARD (exact visual) ===================== */
+.card.staff{background:var(--staff-panel)}
+.card.staff::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--staff-divider);
+}
+.card.staff::before{
+  content:"";position:absolute;right:.65rem;top:.65rem;width:12px;height:12px;
+  background:var(--staff-corner);border-radius:2px;
+}
+.card.staff h2{margin:.25rem 0 .4rem;font-size:1.6rem}
+
+/* Small olive button like screenshot */
+.card.staff .btn{
+  background:var(--olive);color:#17220e;font-weight:800;
+  padding:.44rem .85rem;border-radius:.35rem;border:none;
+  box-shadow:0 2px 0 rgba(0,0,0,.15);cursor:pointer
+}
+
+/* ===================== PANELS ===================== */
+.panel{margin-top:1.35rem;padding:1.1rem;border-radius:.75rem;border:1px solid var(--border);background:#fff}
+
+/* Contact block (deep blue with white content & olive CTA) */
+.panel.contact{
+  background:var(--contact-blue);color:#fff;border-color:transparent;
+}
+.panel.contact h2{margin:.2rem 0 .7rem;font-weight:800;letter-spacing:.3px;color:#fff}
+.panel.contact a{color:#fff;text-decoration:underline}
+.panel.contact .btn{
+  background:var(--olive);color:#17220e;border:none;border-radius:.35rem;
+  padding:.45rem .9rem;font-weight:800;box-shadow:0 2px 0 rgba(0,0,0,.18)
+}
+
+/* ===================== QUOTE / EXPLORE ===================== */
+.quote{margin-top:1.25rem}
+.quote img{border-radius:.6rem}
+blockquote{margin:.7rem 0 .35rem;font-size:1.02rem;color:#2b3c50}
+
+/* Generic button focus */
+.btn{display:inline-block;text-decoration:none}
+.btn:focus{outline:3px solid #000;outline-offset:3px}
+
+/* ===================== FOOTER ===================== */
+.site-footer{margin-top:2rem;background:#f1f6fb;border-top:1px solid var(--border)}
+.site-footer .container{padding:1rem 0}
+
+
+
+
+
+
+
+/* ===================== MAP PAGE ===================== */
+.map{height:380px;border:1px solid var(--border);border-radius:.75rem}
+.search-bar{display:flex;gap:.5rem;margin:1rem 0}
+.search-bar input{flex:1;padding:.6rem;border:1px solid var(--border);border-radius:.5rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:1rem}
+.card-item{border:1px solid var(--border);border-radius:.75rem;padding:1rem;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.card-item h3{margin:.2rem 0 .4rem;font-size:1.05rem}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width:980px){ .card{grid-template-columns:240px 1fr} }
+@media (max-width:720px){
+  .card{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+}
+
+
+
+
+
+
+
+
+/* ===== FINAL OVERRIDES — force the form to match the screenshot ===== */
+
+/* Panel header bars (navy) */
+#main.form-grid > .panel > h2{
+  margin:0 !important;
+  background:#0b2358 !important;
+  color:#fff !important;
+  font-size:1rem !important;
+  font-weight:800 !important;
+  letter-spacing:.2px !important;
+  padding:.85rem 1rem !important;
+  border-radius:.65rem .65rem 0 0 !important;
+}
+
+/* Panel shells */
+#main.form-grid > .panel{
+  background:#fff !important;
+  border:1px solid #dfe3ea !important;
+  border-radius:.65rem !important;
+  box-shadow:0 4px 18px rgba(0,0,0,.06) !important;
+  padding:0 !important;
+  overflow:hidden !important;
+}
+#main.form-grid > .panel > :not(h2){ padding:1rem 1.25rem !important; }
+
+/* Labels */
+#main.form-grid label{
+  display:block !important;
+  margin-top:.85rem !important;
+  font-weight:600 !important;
+  color:#0f223c !important;
+}
+
+/* Make the wrapper positioning context for the eye chip */
+#main.form-grid .pw{ position:relative !important; margin-top:.35rem !important; }
+
+/* --- The three password inputs (force full width & height) --- */
+#current-password,
+#new-password,
+#confirm-password{
+  display:block !important;
+  width:100% !important;
+  height:44px !important;
+  padding:.6rem 2.8rem .6rem .85rem !important; /* room for the eye chip */
+  border:1px solid #dfe3ea !important;
+  border-radius:.55rem !important;
+  background:#fff !important;
+  box-shadow:none !important;
+  font:inherit !important;
+}
+#current-password::placeholder,
+#new-password::placeholder,
+#confirm-password::placeholder{ color:#9aa6ba !important; }
+
+/* Eye chip inside the input on the right */
+.pw > .icon-eye{
+  position:absolute !important;
+  right:.45rem !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  width:36px !important; height:36px !important;
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  border:1px solid #dfe3ea !important;
+  border-radius:.45rem !important;
+  background:#edf2f7 !important;
+  cursor:pointer !important;
+}
+/* show a simple eye glyph (since the button is empty) */
+.pw > .icon-eye::before{
+  content:"\1F441"; /* 👁 */
+  font-size:16px; opacity:.55;
+}
+
+/* Blue buttons with white/blue ring */
+#main.form-grid .btn{
+  background:#0b2358 !important;
+  color:#fff !important;
+  border:2px solid #e7edff !important;
+  border-radius:.5rem !important;
+  padding:.55rem 1rem !important;
+  font-weight:800 !important;
+  box-shadow:0 2px 0 rgba(0,0,0,.15) !important;
+}
+#main.form-grid .btn:hover{ background:#10307c !important; }
+
+/* Error bar (narrow & strong) */
+#errors.errors{
+  background:#651010 !important;
+  color:#fff !important;
+  padding:.65rem .8rem !important;
+  border-radius:.45rem !important;
+  margin:.85rem 0 !important;
+  font-weight:800 !important;
+  max-width:520px !important;
+}
+
+/* Success text */
+#success.success{ color:#146a2e !important; font-weight:800 !important; }
+
+/* 2-column grid + responsive */
+#main.form-grid{ display:grid !important; grid-template-columns:1fr 1fr !important; gap:1.25rem !important; }
+@media (max-width:720px){ #main.form-grid{ grid-template-columns:1fr !important; } }
+
+
+
+
+
+/* ===================== Right-rail QUOTE CARD (matches screenshot) ===================== */
+:root{
+  --rail-blue:#cfeaf7;      /* light blue quote card */
+  --rail-blue-dark:#0e3350; /* dark blue degree panel */
+  --rail-green:#4aa44a;     /* green GO bar */
+  --rail-text:#16324a;
+}
+
+.quote-card{
+  max-width:360px;                 /* narrow, like the screenshot */
+  margin:1rem 0 0 auto;            /* push to right side */
+  background:var(--rail-blue);
+  border-radius:.5rem;
+  padding:0 0 1rem;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+  text-align:center;
+  color:var(--rail-text);
+}
+.quote-card figure{margin:0}
+.quote-card .quote-photo{
+  width:100%;
+  height:auto;
+  display:block;
+  /* rounded arch on top like the screenshot */
+  border-top-left-radius:50% 18%;
+  border-top-right-radius:50% 18%;
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0;
+}
+
+/* Big open quote marks */
+.quote-card blockquote{
+  position:relative;
+  margin:.75rem auto .5rem;
+  width:85%;
+  line-height:1.4;
+}
+.quote-card blockquote::before{
+  content:"“";
+  position:absolute;
+  left:-.35rem;
+  top:-.4rem;
+  font-size:3rem;
+  line-height:1;
+  color:#ffffff;
+  opacity:.9;
+}
+.quote-card figcaption{
+  margin-top:.6rem;
+  font-size:.9rem;
+}
+.quote-card figcaption strong{display:block;margin-top:.2rem}
+.quote-card figcaption span{opacity:.8}
+
+/* ===================== Right-rail DEGREE FINDER (matches screenshot) ===================== */
+.panel.degree{
+  max-width:360px;
+  margin:0.75rem 0 1.25rem auto;   /* right-rail placement */
+  background:var(--rail-blue-dark);
+  color:#fff;
+  border-color:transparent;
+  padding:1.1rem 1rem 1.2rem;
+  text-align:center;
+  border-radius:.5rem;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+.panel.degree .badge{
+  display:inline-block;
+  font-size:.72rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  background:#e9f1f8;
+  color:#143049;
+  border-radius:.25rem;
+  padding:.22rem .45rem;
+  margin-bottom:.55rem;
+}
+.panel.degree h2{
+  margin:.15rem 0 .55rem;
+  color:#fff;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-weight:800;
+  font-size:1.4rem;                /* bold headline like screenshot */
+}
+.panel.degree .lede{
+  margin:.1rem 0 1rem;
+  color:#d6e4f2;
+  font-size:.92rem;
+}
+
+/* Input + full-width green bar button */
+.panel.degree .search-form{display:block}
+.panel.degree .search-form input{
+  width:100%;
+  height:44px;
+  padding:.6rem .8rem;
+  background:#fff;
+  color:#1a2a3f;
+  border:1px solid #0b2b46;
+  border-radius:.35rem;
+  margin:0 0 .6rem;
+}
+.panel.degree .search-form .btn.go{
+  display:block;
+  width:100%;
+  background:var(--rail-green);
+  color:#0f2010;
+  border:none;
+  border-radius:.35rem;
+  font-weight:900;
+  padding:.6rem 0;
+  box-shadow:inset 0 -2px 0 rgba(0,0,0,.08);
+}
+
+/* Keep it tidy on small screens */
+@media (max-width:600px){
+  .quote-card,.panel.degree{margin-left:auto;margin-right:auto}
+}
+
+
+
+
+/* Skip link + sr-only helpers for WCAG */
+.skip-link{position:absolute;left:-9999px;top:-9999px}
+.skip-link:focus{left:1rem;top:1rem;background:#fff;border:2px solid #0b2358;padding:.5rem 1rem;border-radius:.5rem;z-index:999}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);border:0}
+
+/* Make keyboard focus visible on links/buttons */
+a:focus, button:focus, .btn:focus{outline:3px solid #000;outline-offset:2px}
